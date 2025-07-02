@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+/*
 export default function Hero() {
     return (
       <section
@@ -22,7 +23,7 @@ export default function Hero() {
 </Link>
         </div>
   
-        {/* 🍫 Chocolate Drip (CSS-only) */}
+        {/* 🍫 Chocolate Drip (CSS-only) *}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
           <svg
             className="relative block w-full h-12"
@@ -36,6 +37,34 @@ export default function Hero() {
             />
           </svg>
         </div>
+      </section>
+    );
+  }
+  */
+ import banner from '../assets/HomemadeBliss_StopMotionCover_LR-1.webp';
+
+  export default function Hero() {
+    return (
+      <section
+        className="h-[80vh] bg-cover bg-center flex flex-col items-center justify-center text-center px-4"
+        style={{
+          backgroundImage:
+            `url(${banner})`,
+        }}
+      >
+        <h1 className="text-white text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">
+          Enjoy every Moment with our baked goods!
+        </h1>
+        <p className="text-cream text-lg max-w-xl drop-shadow-md mb-6">
+          Indulge in our handcrafted cakes, pastries, and treats made with love
+          daily.
+        </p>
+        <a
+          href="/products"
+          className="bg-orangeAccent text-white px-6 py-3 rounded-lg shadow hover:bg-orangeAccent/90 transition"
+        >
+          View our Menu
+!        </a>
       </section>
     );
   }

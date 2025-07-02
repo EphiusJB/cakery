@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from "react";
 import ReviewForm from "./ReviewForm";
 
+/*
 const initialReviews = [
   {
     name: "Chanda M.",
@@ -41,6 +42,68 @@ export default function Reviews() {
           ))}
         </div>
 
+        <ReviewForm onSubmit={addReview} />
+      </div>
+    </section>
+  );
+}
+*/
+
+
+const reviewsData = [
+  {
+    name: "Sarah Mwale",
+    text: "Absolutely stunning cake design! It looked even better than the photo I sent and tasted divine.",
+    stars: 5,
+  },
+  {
+    name: "James Banda",
+    text: "Mika’s cupcakes are a family favorite — always fresh, moist, and beautifully decorated.",
+    stars: 4,
+  },
+  {
+    name: "Loveness Tembo",
+    text: "I ordered a last-minute birthday cake and they still delivered on time with amazing quality. Highly recommend!",
+    stars: 5,
+  },
+];
+
+export default function Reviews() {
+  const [reviews, setReviews] = useState(reviewsData);
+
+  const addReview = (newReview) => {
+    setReviews([newReview, ...reviews]);
+  };
+
+  return (
+    <section className="bg-white py-20 px-6 text-chocolate" id="reviews">
+      <div className="max-w-3xl mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12">
+          What Our Customers Say
+        </h2>
+
+        <div className="grid gap-6 md:grid-cols-2 mb-12 text-left">
+          {reviews.map((review, index) => (
+            <div
+              key={index}
+              className="bg-cream p-6 rounded-xl shadow hover:shadow-md transition"
+            >
+              <h3 className="text-lg font-semibold mb-2">{review.name}</h3>
+              <div className="flex gap-1 mb-2">
+                {Array(review.stars)
+                  .fill(0)
+                  .map((_, i) => (
+                    <span key={i} className="text-orangeAccent text-xl">
+                      ★
+                    </span>
+                  ))}
+              </div>
+              <p className="text-sm text-chocolate/80 italic">“{review.text}”</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Separate Review Form */}
         <ReviewForm onSubmit={addReview} />
       </div>
     </section>
