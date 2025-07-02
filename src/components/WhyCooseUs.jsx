@@ -45,6 +45,7 @@ const features = [
                 <img
                   src={feature.image}
                   alt={feature.title}
+                  loading="lazy"
                   className="mx-auto mb-4 h-48 rounded-full"
                 />
                 <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>

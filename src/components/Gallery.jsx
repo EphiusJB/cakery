@@ -81,6 +81,7 @@ export default function Gallery() {
               <img
                 src={item.src}
                 alt={item.alt}
+                loading='lazy'
                 className="w-full h-48 object-cover"
               />
               <p className="text-sm text-chocolate p-2 bg-white text-center font-medium">
