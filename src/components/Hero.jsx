@@ -59,12 +59,12 @@ export default function Hero() {
           Indulge in our handcrafted cakes, pastries, and treats made with love
           daily.
         </p>
-        <a
-          href="/products"
-          className="bg-orangeAccent text-white px-6 py-3 rounded-lg shadow hover:bg-orangeAccent/90 transition"
-        >
-          View our Menu
-!        </a>
+        <Link
+  to="/products"
+  className="mt-6 inline-block bg-orangeAccent text-white px-6 py-3 rounded-lg hover:bg-orangeAccent/90 transition"
+>
+  View Our Menu!
+</Link>
       </section>
     );
   }
